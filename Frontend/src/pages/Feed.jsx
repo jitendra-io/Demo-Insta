@@ -1,7 +1,10 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Feed = () => {
+
+    const navigate = useNavigate();
 
     const [posts, setPosts] = useState([
 
@@ -25,6 +28,7 @@ const Feed = () => {
 
   return (
     <section className='feed-section'>
+        <button onClick={() => navigate('/create-post')} className='new-post-btn'>+ New Post</button>
          {
 
             posts.length > 0 ? (
@@ -43,4 +47,4 @@ const Feed = () => {
   )
 }
 
-export default Feed
+export default Feed
