@@ -5,7 +5,9 @@ const postModel = require("./models/post.model");
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://imagefetch-frontend.onrender.com"
+}));
 app.use(express.json());
 
 
